@@ -19,8 +19,40 @@ type PriceLists struct {
 
 // PriceList Type
 type PriceList struct {
-	ID   string `json:"id"`
+	ID   int    `json:"id"`
 	Name string `json:"name"`
+}
+
+// Variants ...
+type Variants struct {
+	Data []Variant `json:"data"`
+}
+
+// Variant ...
+type Variant struct {
+	ID         int                `json:"id"`
+	SKU        string             `json:"sku"`
+	Attributes []VariantAttribute `json:"attributes"`
+}
+
+// VariantAttribute ...
+type VariantAttribute struct {
+	Name  string `json:"name"`
+	Value string `json:"value"`
+}
+
+// Prices ...
+type Prices struct {
+	Data []Price `json:"data"`
+}
+
+// Price ...
+type Price struct {
+	ID          int    `json:"id"`
+	Price       string `json:"price"`
+	OldPrice    string `json:"oldPrice"`
+	RibbonLabel string `json:"ribbonLabel"`
+	ProductID   int    `json:"ProductId"`
 }
 
 var currentFolder, err = os.Getwd()
@@ -64,6 +96,34 @@ func priceListsHandler(c echo.Context) error {
 	return c.JSON(http.StatusOK, payload)
 }
 
+func variantsHandler(c echo.Context) error {
+	mockFilename := "/data/variants.json"
+
+	filename := path.Join(currentFolder, mockFilename)
+
+	bytes := GetMockInBytes(filename)
+
+	var payload Variants
+
+	json.Unmarshal(bytes, &payload)
+
+	return c.JSON(http.StatusOK, payload)
+}
+
+func pricesHandler(c echo.Context) error {
+	mockFilename := "/data/prices.json"
+
+	filename := path.Join(currentFolder, mockFilename)
+
+	bytes := GetMockInBytes(filename)
+
+	var payload Prices
+
+	json.Unmarshal(bytes, &payload)
+
+	return c.JSON(http.StatusOK, payload)
+}
+
 func main() {
 
 	server := echo.New()
@@ -71,6 +131,10 @@ func main() {
 	server.GET("/", mainHandler)
 
 	server.GET("/api/price-lists", priceListsHandler)
+
+	server.GET("/api/variants", variantsHandler)
+
+	server.GET("/api/prices", pricesHandler)
 
 	server.Logger.Fatal(server.Start(":4444"))
 }
