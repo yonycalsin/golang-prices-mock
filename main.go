@@ -56,7 +56,7 @@ type Price struct {
 	ProductID   int    `json:"ProductId"`
 }
 
-var currentFolder, err = os.Getwd()
+var currentFolder, _ = os.Getwd()
 
 // GetMockInBytes will return json data file for mock
 func GetMockInBytes(filename string) []byte {
@@ -122,11 +122,18 @@ func main() {
 
 	server := echo.New()
 
-	server.Use(middleware.CORSWithConfig(middleware.CORSConfig{
-		AllowOrigins: []string{"*"},
-		AllowHeaders: []string{echo.HeaderOrigin, echo.HeaderContentType, echo.HeaderAccept},
+	// Middlewares ...
+	server.Use(middleware.LoggerWithConfig(middleware.LoggerConfig{
+		Format: "method=${method}, uri=${uri}, status=${status}\n\n",
 	}))
 
+	server.Use(middleware.Recover())
+
+	server.Use(middleware.CORSWithConfig(middleware.CORSConfig{
+		AllowOrigins: []string{"*"},
+	}))
+
+	// Routes
 	server.GET("/", mainHandler)
 
 	server.GET("/api/price-lists", priceListsHandler)
