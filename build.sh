@@ -1,6 +1,6 @@
 {
     rm ./main
-    go build ./main.go
+    go build -o ./main
     ./main
 } || {
     echo "This is the error"
