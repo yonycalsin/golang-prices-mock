@@ -1,13 +1,29 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
 	"io/ioutil"
 	"net/http"
 	"os"
 
+	"path"
+
 	"github.com/labstack/echo"
 )
+
+// PriceLists is for payload
+type PriceLists struct {
+	Data []PriceList `json:"data"`
+}
+
+// PriceList Type
+type PriceList struct {
+	ID   string `json:"id"`
+	Name string `json:"name"`
+}
+
+var currentFolder, err = os.Getwd()
 
 // GetMockInBytes will return json data file for mock
 func GetMockInBytes(filename string) []byte {
@@ -35,11 +51,20 @@ func mainHandler(c echo.Context) error {
 }
 
 func priceListsHandler(c echo.Context) error {
-	return c.String(http.StatusOK, "Hey from PriceLists Endpoint")
+	mockFilename := "/data/price-lists.json"
+
+	filename := path.Join(currentFolder, mockFilename)
+
+	bytes := GetMockInBytes(filename)
+
+	var payload PriceLists
+
+	json.Unmarshal(bytes, &payload)
+
+	return c.JSON(http.StatusOK, payload)
 }
 
 func main() {
-	fmt.Println("Hello World")
 
 	server := echo.New()
 
