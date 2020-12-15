@@ -59,7 +59,9 @@ var currentFolder, err = os.Getwd()
 
 // GetMockInBytes will return json data file for mock
 func GetMockInBytes(filename string) []byte {
-	jsonFile, err := os.Open(filename)
+	mockFilename := path.Join(currentFolder, filename)
+
+	jsonFile, err := os.Open(mockFilename)
 
 	if err != nil {
 		fmt.Println(err)
@@ -83,11 +85,8 @@ func mainHandler(c echo.Context) error {
 }
 
 func priceListsHandler(c echo.Context) error {
-	mockFilename := "/data/price-lists.json"
 
-	filename := path.Join(currentFolder, mockFilename)
-
-	bytes := GetMockInBytes(filename)
+	bytes := GetMockInBytes("/data/price-lists.json")
 
 	var payload PriceLists
 
@@ -97,11 +96,8 @@ func priceListsHandler(c echo.Context) error {
 }
 
 func variantsHandler(c echo.Context) error {
-	mockFilename := "/data/variants.json"
 
-	filename := path.Join(currentFolder, mockFilename)
-
-	bytes := GetMockInBytes(filename)
+	bytes := GetMockInBytes("/data/variants.json")
 
 	var payload Variants
 
@@ -111,11 +107,8 @@ func variantsHandler(c echo.Context) error {
 }
 
 func pricesHandler(c echo.Context) error {
-	mockFilename := "/data/prices.json"
 
-	filename := path.Join(currentFolder, mockFilename)
-
-	bytes := GetMockInBytes(filename)
+	bytes := GetMockInBytes("/data/prices.json")
 
 	var payload Prices
 
