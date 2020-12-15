@@ -9,6 +9,8 @@ import (
 
 	"path"
 
+	"github.com/sirupsen/logrus"
+
 	"github.com/labstack/echo"
 	"github.com/labstack/echo/middleware"
 )
@@ -86,7 +88,6 @@ func mainHandler(c echo.Context) error {
 }
 
 func priceListsHandler(c echo.Context) error {
-
 	bytes := GetMockInBytes("/data/price-lists.json")
 
 	var payload PriceLists
@@ -97,7 +98,6 @@ func priceListsHandler(c echo.Context) error {
 }
 
 func variantsHandler(c echo.Context) error {
-
 	bytes := GetMockInBytes("/data/variants.json")
 
 	var payload Variants
@@ -108,7 +108,6 @@ func variantsHandler(c echo.Context) error {
 }
 
 func pricesHandler(c echo.Context) error {
-
 	bytes := GetMockInBytes("/data/prices.json")
 
 	var payload Prices
@@ -119,14 +118,20 @@ func pricesHandler(c echo.Context) error {
 }
 
 func main() {
-
 	server := echo.New()
 
-	// Middlewares ...
-	server.Use(middleware.LoggerWithConfig(middleware.LoggerConfig{
-		Format: "method=${method}, uri=${uri}, status=${status}\n\n",
-	}))
+	// Loggin
+	logger := logrus.New()
 
+	logger.SetLevel(logrus.DebugLevel)
+
+	loggerMiddlware := NewLoggerMiddleware(logger)
+
+	server.Logger = loggerMiddlware
+
+	server.Use(loggerMiddlware.Hook())
+
+	// Middlewares ...
 	server.Use(middleware.Recover())
 
 	server.Use(middleware.CORSWithConfig(middleware.CORSConfig{
