@@ -10,6 +10,7 @@ import (
 	"path"
 
 	"github.com/labstack/echo"
+	"github.com/labstack/echo/middleware"
 )
 
 // PriceLists is for payload
@@ -120,6 +121,11 @@ func pricesHandler(c echo.Context) error {
 func main() {
 
 	server := echo.New()
+
+	server.Use(middleware.CORSWithConfig(middleware.CORSConfig{
+		AllowOrigins: []string{"http://localhost:3000", "https://google.com"},
+		AllowHeaders: []string{echo.HeaderOrigin, echo.HeaderContentType, echo.HeaderAccept},
+	}))
 
 	server.GET("/", mainHandler)
 
