@@ -1,0 +1,116 @@
+{
+  "data": [
+    {
+      "id": 8,
+      "sku": "sku-8",
+      "erpCode": "",
+      "price": null,
+      "stock": 100,
+      "images": [
+        {
+          "url": "https://res.cloudinary.com/riqra/image/upload/saas/tortas-gaby/products/ri3g9xrbz2m24gocb9na.png",
+          "order": 1
+        }
+      ],
+      "order": 5,
+      "attributes": [
+        {
+          "name": "color",
+          "value": "azul"
+        },
+        {
+          "name": "sabor",
+          "value": "dulce"
+        },
+        {
+          "name": "relleno",
+          "value": "manjar"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "sku": "sku-9",
+      "erpCode": "",
+      "price": null,
+      "stock": 100,
+      "images": [
+        {
+          "url": "https://res.cloudinary.com/riqra/image/upload/saas/tortas-gaby/products/ri3g9xrbz2m24gocb9na.png",
+          "order": 1
+        }
+      ],
+      "order": 5,
+      "attributes": [
+        {
+          "name": "color",
+          "value": "rojo"
+        },
+        {
+          "name": "sabor",
+          "value": "dulce"
+        },
+        {
+          "name": "relleno",
+          "value": "manjar"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "sku": "sku-10",
+      "erpCode": "",
+      "price": null,
+      "stock": 100,
+      "images": [
+        {
+          "url": "https://res.cloudinary.com/riqra/image/upload/saas/tortas-gaby/products/ri3g9xrbz2m24gocb9na.png",
+          "order": 1
+        }
+      ],
+      "order": 5,
+      "attributes": [
+        {
+          "name": "color",
+          "value": "azul"
+        },
+        {
+          "name": "sabor",
+          "value": "dulce"
+        },
+        {
+          "name": "relleno",
+          "value": "manjar"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "sku": "sku-11",
+      "erpCode": "",
+      "price": null,
+      "stock": 100,
+      "images": [
+        {
+          "url": "https://res.cloudinary.com/riqra/image/upload/saas/tortas-gaby/products/ri3g9xrbz2m24gocb9na.png",
+          "order": 1
+        }
+      ],
+      "order": 5,
+      "attributes": [
+        {
+          "name": "color",
+          "value": "azul"
+        },
+        {
+          "name": "sabor",
+          "value": "amargo"
+        },
+        {
+          "name": "relleno",
+          "value": "chocolate"
+        }
+      ]
+    }
+  ]
+}
