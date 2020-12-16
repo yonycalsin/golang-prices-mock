@@ -56,6 +56,7 @@ type Price struct {
 	OldPrice    string `json:"oldPrice"`
 	RibbonLabel string `json:"ribbonLabel"`
 	ProductID   int    `json:"ProductId"`
+	PriceListID int    `json:"PriceListId"`
 }
 
 var currentFolder, _ = os.Getwd()
