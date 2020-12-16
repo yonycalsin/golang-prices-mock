@@ -1,7 +1,7 @@
 {
   "data": [
     {
-      "id": 8,
+      "id": 1,
       "sku": "sku-8",
       "erpCode": "",
       "price": null,
@@ -29,7 +29,7 @@
       ]
     },
     {
-      "id": 9,
+      "id": 2,
       "sku": "sku-9",
       "erpCode": "",
       "price": null,
@@ -57,7 +57,7 @@
       ]
     },
     {
-      "id": 10,
+      "id": 3,
       "sku": "sku-10",
       "erpCode": "",
       "price": null,
@@ -85,7 +85,7 @@
       ]
     },
     {
-      "id": 11,
+      "id": 4,
       "sku": "sku-11",
       "erpCode": "",
       "price": null,
