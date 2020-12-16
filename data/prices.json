@@ -6,7 +6,8 @@
       "oldPrice": "25.00",
       "ribbonLabel": null,
       "createdAt": "2020-12-11T15:09:53.000Z",
-      "ProductId": 1
+      "ProductId": 1,
+      "PriceListId": 1
     },
     {
       "id": 4,
@@ -14,7 +15,8 @@
       "oldPrice": null,
       "ribbonLabel": null,
       "createdAt": "2020-12-11T15:09:53.000Z",
-      "ProductId": 2
+      "ProductId": 2,
+      "PriceListId": 2
     },
     {
       "id": 7,
@@ -22,7 +24,8 @@
       "oldPrice": null,
       "ribbonLabel": null,
       "createdAt": "2020-12-11T15:09:53.000Z",
-      "ProductId": 3
+      "ProductId": 3,
+      "PriceListId": 3
     },
     {
       "id": 8,
@@ -30,7 +33,8 @@
       "oldPrice": null,
       "ribbonLabel": null,
       "createdAt": "2020-12-11T15:09:53.000Z",
-      "ProductId": 4
+      "ProductId": 4,
+      "PriceListId": 1
     },
     {
       "id": 10,
@@ -38,7 +42,8 @@
       "oldPrice": "20.99",
       "ribbonLabel": null,
       "createdAt": "2020-12-11T15:09:53.000Z",
-      "ProductId": 7
+      "ProductId": 7,
+      "PriceListId": 3
     },
     {
       "id": 11,
@@ -46,7 +51,8 @@
       "oldPrice": "20.99",
       "ribbonLabel": null,
       "createdAt": "2020-12-11T15:09:53.000Z",
-      "ProductId": 8
+      "ProductId": 8,
+      "PriceListId": 1
     },
     {
       "id": 12,
@@ -54,7 +60,8 @@
       "oldPrice": "20.99",
       "ribbonLabel": null,
       "createdAt": "2020-12-11T15:09:53.000Z",
-      "ProductId": 9
+      "ProductId": 9,
+      "PriceListId": 2
     },
     {
       "id": 13,
@@ -62,7 +69,8 @@
       "oldPrice": "20.99",
       "ribbonLabel": null,
       "createdAt": "2020-12-11T15:09:53.000Z",
-      "ProductId": 10
+      "ProductId": 10,
+      "PriceListId": 1
     },
     {
       "id": 14,
@@ -70,7 +78,7 @@
       "oldPrice": "20.99",
       "ribbonLabel": null,
       "createdAt": "2020-12-11T15:09:53.000Z",
-      "ProductId": 11
+      "PriceListId": 3
     }
   ]
 }
