@@ -144,7 +144,7 @@ func main() {
 
 	server.GET("/api/price-lists", priceListsHandler)
 
-	server.GET("/api/variants", variantsHandler)
+	server.GET("/api/products/variants", variantsHandler)
 
 	server.GET("/api/prices", pricesHandler)
 
