@@ -36,6 +36,13 @@ type Variant struct {
 	ID         int                `json:"id"`
 	SKU        string             `json:"sku"`
 	Attributes []VariantAttribute `json:"attributes"`
+	Product    Product            `json:"product"`
+}
+
+// Product is TypeProduct
+type Product struct {
+	ID   int    `json:"id"`
+	Name string `json:"name"`
 }
 
 // VariantAttribute ...
