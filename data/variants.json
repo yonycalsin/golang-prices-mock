@@ -128,5 +128,12 @@
         "name": "Ron Cartavio Black"
       }
     }
-  ]
+  ],
+  "pagination": {
+    "hasNextPage": false,
+    "hasPrevPage": false,
+    "page": 1,
+    "pages": 2,
+    "total": 4
+  }
 }
