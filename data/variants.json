@@ -26,7 +26,11 @@
           "name": "relleno",
           "value": "manjar"
         }
-      ]
+      ],
+      "product": {
+        "id": 1,
+        "name": "Ron Cartavio Black"
+      }
     },
     {
       "id": 2,
@@ -54,7 +58,11 @@
           "name": "relleno",
           "value": "manjar"
         }
-      ]
+      ],
+      "product": {
+        "id": 1,
+        "name": "Ron Cartavio Black"
+      }
     },
     {
       "id": 3,
@@ -82,7 +90,11 @@
           "name": "relleno",
           "value": "manjar"
         }
-      ]
+      ],
+      "product": {
+        "id": 1,
+        "name": "Ron Cartavio Black"
+      }
     },
     {
       "id": 4,
@@ -110,7 +122,18 @@
           "name": "relleno",
           "value": "chocolate"
         }
-      ]
+      ],
+      "product": {
+        "id": 1,
+        "name": "Ron Cartavio Black"
+      }
     }
-  ]
+  ],
+  "pagination": {
+    "hasNextPage": false,
+    "hasPrevPage": false,
+    "page": 1,
+    "pages": 2,
+    "total": 4
+  }
 }

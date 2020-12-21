@@ -28,7 +28,8 @@ type PriceList struct {
 
 // Variants ...
 type Variants struct {
-	Data []Variant `json:"data"`
+	Data       []Variant  `json:"data"`
+	Pagination Pagination `json:"pagination"`
 }
 
 // Variant ...
@@ -36,6 +37,22 @@ type Variant struct {
 	ID         int                `json:"id"`
 	SKU        string             `json:"sku"`
 	Attributes []VariantAttribute `json:"attributes"`
+	Product    Product            `json:"product"`
+}
+
+// Product is TypeProduct
+type Product struct {
+	ID   int    `json:"id"`
+	Name string `json:"name"`
+}
+
+// Pagination is ...
+type Pagination struct {
+	HasNextPage bool `json:"hasNextPage"`
+	HasPrevpage bool `json:"hasPrevPage"`
+	Page        int  `json:"page"`
+	Pages       int  `json:"pages"`
+	Total       int  `json:"total"`
 }
 
 // VariantAttribute ...
